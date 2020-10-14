@@ -1,5 +1,4 @@
-import 'package:MediaPlayer/tracks/track3.dart';
-import 'package:MediaPlayer/tracks/track4.dart';
+import 'package:MediaPlayer/tracks/player.dart';
 import 'package:flutter/material.dart';
 
 class Beats extends StatefulWidget {
@@ -55,7 +54,13 @@ class _BeatsState extends State<Beats> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => TrackThree()));
+                                  builder: (context) => TrackOne(
+                                        song:
+                                            "ES_Black Hole Serenade - White Drift.mp3",
+                                        img: "black_hole.jpg",
+                                        title: "White Drift",
+                                        category: "Beats",
+                                      )));
                         })),
                 /*ListTile(
                     leading: CircleAvatar(
@@ -107,7 +112,13 @@ class _BeatsState extends State<Beats> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => TrackFour()));
+                                  builder: (context) => TrackOne(
+                                        song:
+                                            "ES_When I Get Sober (Instrumental Version) - waykap.mp3",
+                                        img: "waykap.jpg",
+                                        title: "When I Get Sober",
+                                        category: "Beats",
+                                      )));
                         })),
                 /* ListTile(
                     leading: CircleAvatar(
