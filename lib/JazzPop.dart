@@ -1,5 +1,4 @@
-import 'package:MediaPlayer/tracks/track7.dart';
-import 'package:MediaPlayer/tracks/track8.dart';
+import 'package:MediaPlayer/tracks/player.dart';
 import 'package:flutter/material.dart';
 
 class JazzPop extends StatefulWidget {
@@ -55,7 +54,13 @@ class _JazzPopState extends State<JazzPop> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => TrackSeven()));
+                                  builder: (context) => TrackOne(
+                                        song:
+                                            "Maroon 5 - Memories (Official Video).mp3",
+                                        img: "Memories.jpg",
+                                        title: "Memories",
+                                        category: "Jazz Pop",
+                                      )));
                         })),
                 /* ListTile(
                     leading: CircleAvatar(
@@ -107,7 +112,13 @@ class _JazzPopState extends State<JazzPop> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => TrackEight()));
+                                  builder: (context) => TrackOne(
+                                        song:
+                                            "'DANCE MONKEY' - STREET SAX PERFORMANCE.mp3",
+                                        img: "Danielle.jpg",
+                                        title: "Street Sax",
+                                        category: "Jazz Pop",
+                                      )));
                         })),
                 /* ListTile(
                     leading: CircleAvatar(

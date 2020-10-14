@@ -1,5 +1,4 @@
-import 'package:MediaPlayer/tracks/track5.dart';
-import 'package:MediaPlayer/tracks/track6.dart';
+import 'package:MediaPlayer/tracks/player.dart';
 import 'package:flutter/material.dart';
 
 class HipHop extends StatefulWidget {
@@ -103,7 +102,13 @@ class _HipHopState extends State<HipHop> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => TrackFive()));
+                                  builder: (context) => TrackOne(
+                                        song:
+                                            "Eminem - Godzilla ft. Juice WRLD (Dir. by @_ColeBennett_).mp3",
+                                        img: "Godzilla.jpg",
+                                        title: "Godzilla",
+                                        category: "Hip Hop",
+                                      )));
                         })),
                 ListTile(
                     leading: CircleAvatar(
@@ -131,7 +136,13 @@ class _HipHopState extends State<HipHop> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => TrackSix()));
+                                  builder: (context) => TrackOne(
+                                        song:
+                                            "Roddy Ricch - The Box [Official Music Video].mp3",
+                                        img: "The_box.jpg",
+                                        title: "The Box",
+                                        category: "Hip Hop",
+                                      )));
                         })),
               ],
             ),

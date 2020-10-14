@@ -1,5 +1,4 @@
-import 'package:MediaPlayer/tracks/track1.dart';
-import 'package:MediaPlayer/tracks/track2.dart';
+import 'package:MediaPlayer/tracks/player.dart';
 import 'package:flutter/material.dart';
 
 class CalmMusic extends StatefulWidget {
@@ -55,7 +54,12 @@ class _CalmMusicState extends State<CalmMusic> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => TrackOne()));
+                                  builder: (context) => TrackOne(
+                                        song: "summer.mp3",
+                                        img: "summer_pic.jpeg",
+                                        title: "Summer",
+                                        category: "Calm",
+                                      )));
                         })),
                 ListTile(
                     leading: CircleAvatar(
@@ -83,7 +87,12 @@ class _CalmMusicState extends State<CalmMusic> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => TrackTwo()));
+                                  builder: (context) => TrackOne(
+                                        song: "sea.mp3",
+                                        img: "sea_waves.jpeg",
+                                        title: "Sea Waves",
+                                        category: "Calm",
+                                      )));
                         })),
                 /* ListTile(
                     leading: CircleAvatar(
