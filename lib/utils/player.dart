@@ -1,24 +1,20 @@
 import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:MediaPlayer/utils/song.dart';
 
 class TrackOne extends StatefulWidget {
-  @override
-  String song, img, title, category;
-  TrackOne({this.song, this.img, this.title, this.category});
-  _TrackOneState createState() => _TrackOneState(
-      song: this.song,
-      img: this.img,
-      title: this.title,
-      category: this.category);
+  final Song song;
+  TrackOne({this.song});
+  _TrackOneState createState() => _TrackOneState(song: this.song);
 }
 
 AudioPlayer newPlayer = new AudioPlayer();
 AudioCache audio = new AudioCache(fixedPlayer: newPlayer);
 
 class _TrackOneState extends State<TrackOne> {
-  String song, img, title, category;
-  _TrackOneState({this.song, this.img, this.title, this.category});
+  Song song;
+  _TrackOneState({this.song});
   bool play = false;
   bool stop = true;
   Duration _duration = new Duration();
@@ -27,7 +23,7 @@ class _TrackOneState extends State<TrackOne> {
   playAudio() {
     if (play == false || stop == true) {
       newPlayer.setVolume(1.0);
-      audio.play("music/${this.song}");
+      audio.play("music/${this.song.loc}");
       play = true;
       stop = false;
     }
@@ -76,7 +72,7 @@ class _TrackOneState extends State<TrackOne> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Color(0xff6f4a8e),
-        title: Text(this.category),
+        title: Text(this.song.category),
         leading: IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () {
@@ -90,7 +86,7 @@ class _TrackOneState extends State<TrackOne> {
             height: 40.0,
           ),
           Text(
-            this.title,
+            this.song.title,
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 40.0,
@@ -107,7 +103,7 @@ class _TrackOneState extends State<TrackOne> {
                     height: 200,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage('assets/${this.img}')),
+                            image: AssetImage('assets/${this.song.img}')),
                         borderRadius: BorderRadius.all(
                           Radius.circular(20.0),
                         ))),
